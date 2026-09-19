@@ -146,15 +146,9 @@ export const InteractiveTerminal = () => {
           {/* Command Input Form */}
           <form
             onSubmit={handleSubmit}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              background: '#0a0e1a',
-              borderTop: '1px solid var(--glass-border)',
-              padding: '0.75rem 1.25rem'
-            }}
+            className="terminal-input-row"
           >
-            <span style={{ color: 'var(--cyan)', fontFamily: 'var(--font-mono)', fontSize: '0.9rem', marginRight: '0.6rem' }}>
+            <span className="terminal-prompt-label" style={{ color: 'var(--cyan)', fontFamily: 'var(--font-mono)', fontSize: '0.9rem', marginRight: '0.6rem' }}>
               vinayak@os:~$
             </span>
             <input
@@ -162,6 +156,7 @@ export const InteractiveTerminal = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="type 'help', 'bio', 'skills', 'projects', 'sudo hire'..."
+              className="terminal-input-field"
               style={{
                 flex: 1,
                 background: 'transparent',
@@ -169,11 +164,13 @@ export const InteractiveTerminal = () => {
                 outline: 'none',
                 color: '#fff',
                 fontFamily: 'var(--font-mono)',
-                fontSize: '0.9rem'
+                fontSize: '0.9rem',
+                minWidth: '120px'
               }}
             />
             <button
               type="submit"
+              className="terminal-execute-btn"
               style={{
                 background: 'rgba(0, 243, 255, 0.1)',
                 border: '1px solid var(--cyan)',

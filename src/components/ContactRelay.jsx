@@ -81,7 +81,7 @@ export const ContactRelay = () => {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: '2.5rem' }} className="contact-grid">
+        <div className="contact-grid">
           
           {/* Left Info Panel */}
           <div className="hud-panel" style={{ padding: '2rem' }}>

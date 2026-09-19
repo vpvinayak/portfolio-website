@@ -44,9 +44,9 @@ export const Hero = () => {
   };
 
   return (
-    <section id="overview" className="section-padding" style={{ paddingTop: '8rem', position: 'relative' }}>
+    <section id="overview" className="section-padding" style={{ paddingTop: '6rem', position: 'relative' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '3rem', alignItems: 'center' }} className="hero-grid">
+        <div className="hero-grid">
           
           {/* Left Bio Column */}
           <div>
@@ -57,7 +57,7 @@ export const Hero = () => {
 
             <h1 style={{
               fontFamily: 'var(--font-heading)',
-              fontSize: 'clamp(2.5rem, 5vw, 3.8rem)',
+              fontSize: 'clamp(2.2rem, 5vw, 3.8rem)',
               fontWeight: 900,
               color: '#fff',
               lineHeight: 1.1,
@@ -96,7 +96,7 @@ export const Hero = () => {
             </p>
 
             {/* Action Buttons */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '2.5rem' }}>
+            <div className="hero-action-btns" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '2.5rem' }}>
               <button
                 onClick={() => scrollToSection('projects')}
                 onMouseEnter={() => soundFX.playHover()}
@@ -128,7 +128,7 @@ export const Hero = () => {
             </div>
 
             {/* Quick Contact & Social Handles */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+            <div className="hero-social-links" style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
               <a
                 href={portfolioData.personal.github}
                 target="_blank"

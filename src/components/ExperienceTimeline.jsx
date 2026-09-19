@@ -174,7 +174,7 @@ export const ExperienceTimeline = () => {
 
         {/* Tab Content 3: Awards & Leadership */}
         {activeTab === 'awards' && (
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }} className="awards-grid">
+          <div className="awards-grid">
             
             {/* Awards Box */}
             <div className="hud-panel" style={{ padding: '1.75rem' }}>

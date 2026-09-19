@@ -21,7 +21,7 @@ export const ProjectModal = ({ project, onClose }) => {
       justifyContent: 'center',
       padding: '1.5rem'
     }}>
-      <div className="hud-panel box-cyan-glow" style={{
+      <div className="hud-panel box-cyan-glow project-modal-container" style={{
         maxWidth: '700px',
         width: '100%',
         maxHeight: '90vh',
@@ -62,7 +62,7 @@ export const ProjectModal = ({ project, onClose }) => {
         </div>
 
         {/* High Res Visual Banner */}
-        <div style={{
+        <div className="modal-banner-img" style={{
           width: '100%',
           height: '240px',
           borderRadius: '8px',

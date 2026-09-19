@@ -86,7 +86,7 @@ export const Navbar = ({ soundMuted, onToggleSound, scanlinesEnabled, onToggleSc
         </div>
 
         {/* Desktop Nav Links */}
-        <nav className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+        <nav className="desktop-nav">
           {navLinks.map((link) => (
             <button
               key={link.id}
