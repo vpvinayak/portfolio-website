@@ -11,10 +11,17 @@ export const InteractiveTerminal = () => {
     { type: 'output', text: 'Type "help" or click sample commands below to execute system commands.' }
   ]);
 
-  const terminalEndRef = useRef(null);
+  const outputContainerRef = useRef(null);
+  const isInitialMount = useRef(true);
 
   useEffect(() => {
-    terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+      return;
+    }
+    if (outputContainerRef.current) {
+      outputContainerRef.current.scrollTop = outputContainerRef.current.scrollHeight;
+    }
   }, [history]);
 
   const handleCommand = (cmdStr) => {
@@ -117,17 +124,20 @@ export const InteractiveTerminal = () => {
           </div>
 
           {/* Terminal Output Area */}
-          <div style={{
-            padding: '1.25rem',
-            minHeight: '260px',
-            maxHeight: '380px',
-            overflowY: 'auto',
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.88rem',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '0.6rem'
-          }}>
+          <div
+            ref={outputContainerRef}
+            style={{
+              padding: '1.25rem',
+              minHeight: '260px',
+              maxHeight: '380px',
+              overflowY: 'auto',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.88rem',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.6rem'
+            }}
+          >
             {history.map((item, index) => (
               <div
                 key={index}
@@ -140,7 +150,6 @@ export const InteractiveTerminal = () => {
                 {item.text}
               </div>
             ))}
-            <div ref={terminalEndRef} />
           </div>
 
           {/* Command Input Form */}
